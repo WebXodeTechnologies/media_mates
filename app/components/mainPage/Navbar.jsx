@@ -2,48 +2,99 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react"; // or import from react-icons
 import ThemeToggle from "./ThemeToggle";
+import Logo from "@/public/logo/Mediamateslogo.png";
+import Image from "next/image";
+import clsx from "clsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuItems = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
   return (
-    <header className="border-b border-neutral-200 dark:border-neutral-700">
-      <nav className="container mx-auto flex items-center justify-between p-4">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold">
-          Media<span className="text-blue-500">Mates</span>
+    <header className="border-b border-neutral-200 dark:border-neutral-800 border-blur">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+        
+        {/* Left: Logo */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <Image
+            src={Logo}
+            alt="Mediamates Logo"
+            width={200}
+            height={200}
+            className="object-contain transition-transform duration-300 group-hover:scale-105"
+          />
         </Link>
 
-        {/* Desktop Menu */}
+        {/* Middle: Menu */}
         <ul className="hidden md:flex gap-8">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="text-red-500 dark:text-green-500 font-medium hover:text-lime-400 transition-colors"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Actions */}
+        {/* Right: Social Icons + Theme Toggle */}
         <div className="flex items-center gap-4">
+          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+            <X size={20} />
+          </a>
+          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+            <Facebook size={20} />
+          </a>
+          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+            <Instagram size={20} />
+          </a>
           <ThemeToggle />
           {/* Mobile Menu Button */}
-          <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <button
+            className="md:hidden p-2 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-700">
-          <ul className="flex flex-col items-center gap-4 p-4">
-            <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-            <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
-            <li><Link href="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
-            <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
-          </ul>
+      <div
+        className={clsx(
+          "fixed top-0 right-0 h-full w-64 bg-white dark:bg-neutral-900 shadow-lg transform transition-transform duration-300 md:hidden",
+          isOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        <div className="flex justify-end p-4">
+          <button onClick={() => setIsOpen(false)}>
+            <X size={24} className="text-neutral-900 dark:text-white" />
+          </button>
         </div>
-      )}
+        <ul className="flex flex-col gap-6 p-6 text-lg">
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <Link
+                href={item.href}
+                className="hover:text-lime-400 transition-colors text-neutral-800 dark:text-neutral-200"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 }

@@ -1,7 +1,6 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-// Load Plus Jakarta Sans
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta-sans",
@@ -26,18 +25,27 @@ export const metadata = {
     "YouTube promotions Namakkal",
     "digital marketing Namakkal",
   ],
+  icons: {
+    icon: [
+      { url: "/logo/favicon-32x32.png", sizes: "16x16", type: "image/png" },
+      { url: "/logo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+    ],
+  },
   authors: [{ name: "Media Mates" }],
   openGraph: {
     title: "Media Mates | Branding, Photography & Promotions in Namakkal",
     description:
       "Helping brands, stores, and individuals grow with creative photography, video promotions, and marketing strategies in Namakkal.",
-    url: "https://mediamates.in", // Replace with actual URL
+    url: "https://mediamates.in",
     siteName: "Media Mates",
     images: [
       {
-        url: "/og-image.jpg", // Replace with actual image path
+        url: "/logo/favicon-32x32.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "Media Mates Branding & Photography in Namakkal",
       },
     ],
@@ -49,7 +57,7 @@ export const metadata = {
     title: "Media Mates | Branding, Photography & Promotions in Namakkal",
     description:
       "Photography, videography, branding, and promotions to help businesses and individuals grow in Namakkal.",
-    images: ["/og-image.jpg"], // Replace with actual image path
+    images: ["/logo/mediamates-logo-main.png"], // Corrected path & name
   },
 };
 

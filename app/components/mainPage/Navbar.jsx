@@ -1,15 +1,17 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { Facebook, Instagram } from "lucide-react"; // or import from react-icons
+import { Menu, X, Facebook, Instagram } from "lucide-react";
+import { useTheme } from "next-themes";
 import ThemeToggle from "./ThemeToggle";
 import Logo from "@/public/logo/Mediamateslogo.png";
+import LogoDark from "@/public/logo/MediamatesLogoWhite.png";
 import Image from "next/image";
 import clsx from "clsx";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -20,12 +22,12 @@ export default function Navbar() {
 
   return (
     <header className="border-b border-neutral-200 dark:border-neutral-800 border-blur">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-8">
         
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src={Logo}
+            src={theme === "dark" ? LogoDark : Logo}
             alt="Mediamates Logo"
             width={200}
             height={200}
@@ -39,7 +41,7 @@ export default function Navbar() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="text-red-500 dark:text-green-500 font-medium hover:text-lime-400 transition-colors"
+                className="font-medium text-white transition-colors duration-300"
               >
                 {item.name}
               </Link>
@@ -49,9 +51,7 @@ export default function Navbar() {
 
         {/* Right: Social Icons + Theme Toggle */}
         <div className="flex items-center gap-4">
-          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
-            <X size={20} />
-          </a>
+          
           <a href="#" className="text-lime-400 hover:text-lime-300 transition">
             <Facebook size={20} />
           </a>
@@ -72,21 +72,21 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={clsx(
-          "fixed top-0 right-0 h-full w-64 bg-white dark:bg-neutral-900 shadow-lg transform transition-transform duration-300 md:hidden",
+          "fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 md:hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div className="flex justify-end p-4">
           <button onClick={() => setIsOpen(false)}>
-            <X size={24} className="text-neutral-900 dark:text-white" />
+            <X size={24} className="text-neutral-900" />
           </button>
         </div>
-        <ul className="flex flex-col gap-6 p-6 text-lg">
+        <ul className="flex flex-col gap-6 p-6 text-lg text-neutral-800">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="hover:text-lime-400 transition-colors text-neutral-800 dark:text-neutral-200"
+                className="hover:text-lime-400 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

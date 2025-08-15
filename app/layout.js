@@ -1,5 +1,8 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
+import Navbar from "@/app/components/mainPage/Navbar";
+import Footer from "@/app/components/mainPage/Footer";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -64,7 +67,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 antialiased">
+         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+           <main className="min-h-screen">{children}</main>
+            <Footer />
+         </ThemeProvider>
+        </body>
     </html>
   );
 }

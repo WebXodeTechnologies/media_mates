@@ -21,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="border-b border-neutral-200 dark:border-neutral-800 border-blur">
+    <header className="border-b border-neutral-200  border-blur">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-8">
         
         {/* Left: Logo */}
@@ -41,7 +41,7 @@ export default function Navbar() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="font-medium text-white transition-colors duration-300"
+                className="font-medium dark:text-white hover:text-lime-400 transition-colors duration-300"
               >
                 {item.name}
               </Link>

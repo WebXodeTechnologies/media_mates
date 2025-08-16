@@ -67,7 +67,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
-      <body className="text-neutral-900 dark:text-neutral-100 antialiased">
+      <body className="antialiased">
          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
            <main className="min-h-screen">{children}</main>

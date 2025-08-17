@@ -16,7 +16,7 @@ export default function Footer() {
   const { theme } = useTheme();
 
   return (
-    <footer className="border-t border-neutral-200 dark:border-neutral-700 dark:bg-neutral-900">
+    <footer className="border-t border-gray-500">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Column 1: Logo + Tagline */}
         <div>

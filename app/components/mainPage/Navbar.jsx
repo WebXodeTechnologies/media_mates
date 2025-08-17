@@ -23,17 +23,18 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="border-b border-gray-500 border-blur">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6">
+    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 
+                  backdrop-blur-sm">
         
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src={theme === "dark" ? LogoDark : Logo}
+            src={theme === "dark" ? LogoDark : LogoDark}
             alt="Mediamates Logo"
             width={200}
             height={200}
-            className="object-contain transition-transform duration-300 group-hover:scale-105"
+            className="w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
 
@@ -43,7 +44,7 @@ export default function Navbar() {
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="font-medium dark:text-white hover:text-lime-400 transition-colors duration-300"
+                className="font-medium dark:text-white text-white hover:text-lime-400 transition-colors duration-300"
               >
                 {item.name}
               </Link>

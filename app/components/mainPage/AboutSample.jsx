@@ -1,23 +1,36 @@
 "use client";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, PhoneCall } from "lucide-react";
 import { GiSplitCross } from "react-icons/gi";
+import FloatingCta from "./FloatingCta";
+import gsap from "gsap";
 
 const AboutSample = () => {
+    const ctaRef = useRef(null); // ref for CTA
+
+    useEffect(() => {
+        // Animate CTA only
+        gsap.to(ctaRef.current, {
+            x: 10, // move 20px right
+            duration: 3,
+            yoyo: true,
+            repeat: -1,
+            ease: "power1.inOut",
+        });
+    }, []);
+
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-16 md:py-24 lg:py-32 bg-white dark:bg-black transition-colors duration-300 mb-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-20 md:py-24 lg:py-32 bg-white dark:bg-black transition-colors duration-300 mb-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* LEFT GRID (STACKED / OVERLAPPED IMAGES) */}
                 <div className="relative flex justify-center lg:justify-start">
-                    {/* Decorative Icon */}
+                    {/* Decorative Icons */}
                     <GiSplitCross className="absolute -top-6 left-[4] text-green-500 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
                     <GiSplitCross className="absolute -top-18 left-[4] text-green-500 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
 
-
-
-
                     {/* First Image */}
-                    <div className="absolute top-6 -left-1 sm:top-10 sm:-left-[-5] w-56 sm:w-72 md:w-80 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg z-10">
+                    <div className="absolute top-6 -left-1 sm:top-10 w-56 sm:w-72 md:w-80 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg z-10">
                         <Image
                             src="/aboutsample/about-image-1.jpg"
                             alt="Team work"
@@ -34,8 +47,18 @@ const AboutSample = () => {
                             fill
                             className="rounded-2xl object-cover"
                         />
-                        {/* Decorative Icon */}
                         <GiSplitCross className="absolute -bottom-2 right-[-20] text-red-500 text-3xl md:text-4xl opacity-70 dark:text-red-400" />
+                    </div>
+
+                    {/* Floating CTA (Animated) */}
+                    <div ref={ctaRef} className="absolute -bottom-10 left-[200] z-50 hidden md:block">
+                        <FloatingCta
+                            text="Call Us Now!"
+                            phone="+91 98765 43210"
+                            icon={<PhoneCall size={22} />}
+                            bgColor="bg-gray-900"
+                            textColor="text-white"
+                        />
                     </div>
                 </div>
 
@@ -44,9 +67,9 @@ const AboutSample = () => {
                     <p className="text-green-500 font-semibold uppercase tracking-wide">
                         * About Us
                     </p>
-                    <h2 className="text-2xl  md:text-5xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-snug">
-                        Crafting{" "}
-                        <span className="text-green-500">stories through</span> Creative Content
+                    <h2 className="text-2xl md:text-5xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-snug">
+                        Crafting <span className="text-green-500">stories through</span>{" "}
+                        Creative Content
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 text-lg sm:text-base md:text-xl">
                         Transforming ideas into captivating visuals, we blend creativity and

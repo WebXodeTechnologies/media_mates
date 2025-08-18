@@ -36,12 +36,12 @@ const HeroBody = () => {
         {/* CTA Button */}
         <Link
           href="/get-started"
-          className="group mt-8 inline-flex items-center gap-2 bg-lime-500 text-white px-6 py-3 rounded-full text-lg font-medium
-            transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-xl hover:bg-lime-400"
+          className="group mt-8 inline-flex items-center bg-gray-800 gap-2 text-white px-6 py-3 rounded-full text-2xl font-semibold tracking-wide
+            transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-xl hover:bg-lime-600"
         >
           Get Started
           <GoArrowUpRight
-            className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+            className="w-7 h-7 bg-lime-500 rounded-full transform transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
           />
         </Link>
       </div>

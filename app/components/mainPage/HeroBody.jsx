@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { GoArrowUpRight } from "react-icons/go";
 
+
 const HeroBody = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">

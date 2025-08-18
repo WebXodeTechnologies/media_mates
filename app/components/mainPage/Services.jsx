@@ -69,7 +69,7 @@ const Services = () => {
           Services
         </h2>
         <p className="text-black dark:text-white mt-2 text-xl md:text-2xl">
-          Innovative design services tailored to your needs
+          Innovative Creative Services tailored to your Business Growth
         </p>
       </div>
 

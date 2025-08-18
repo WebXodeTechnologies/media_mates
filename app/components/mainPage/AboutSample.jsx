@@ -51,7 +51,7 @@ const AboutSample = () => {
                     </div>
 
                     {/* Floating CTA (Animated) */}
-                    <div ref={ctaRef} className="absolute -bottom-10 left-[200] z-50 hidden md:block">
+                    <div ref={ctaRef} className="absolute -bottom-10 left-[200] z-10 hidden md:block">
                         <FloatingCta
                             text="Call Us Now!"
                             phone="+91 98765 43210"
@@ -101,7 +101,7 @@ const AboutSample = () => {
                     {/* CTA BUTTON */}
                     <div className="mt-6">
                         <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200 text-lg sm:text-base">
-                            More About <ArrowUpRight size={18} />
+                            Learn More <ArrowUpRight size={18} />
                         </button>
                     </div>
                 </div>

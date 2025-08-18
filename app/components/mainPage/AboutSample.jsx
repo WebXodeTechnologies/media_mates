@@ -21,7 +21,7 @@ const AboutSample = () => {
     }, []);
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-20 md:py-24 lg:py-32 bg-white dark:bg-black transition-colors duration-300 mb-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full py-20 md:py-24 lg:py-32 bg-white dark:bg-neutral-950 transition-colors duration-300 mb-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 {/* LEFT GRID (STACKED / OVERLAPPED IMAGES) */}
                 <div className="relative flex justify-center lg:justify-start">

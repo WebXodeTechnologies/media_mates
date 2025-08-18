@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import "./globals.css";
 import Navbar from "@/app/components/mainPage/Navbar";
 import Footer from "@/app/components/mainPage/Footer";
+import SmoothScroll from "@/app/components/SmoothScroll";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -68,11 +69,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
       <body className="antialiased">
+        <SmoothScroll>
          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
            <main className="min-h-screen">{children}</main>
             <Footer />
          </ThemeProvider>
+         </SmoothScroll>
         </body>
     </html>
   );

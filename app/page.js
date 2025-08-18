@@ -2,7 +2,7 @@ import HeroBody from "@/app/components/mainPage/HeroBody";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="py-20">
       <HeroBody />
     </main>
   );

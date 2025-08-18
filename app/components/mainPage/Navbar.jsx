@@ -8,7 +8,7 @@ import Logo from "@/public/logo/Mediamateslogo.png";
 import LogoDark from "@/public/logo/MediamatesLogoWhite.png";
 import Image from "next/image";
 import clsx from "clsx";
-import { FaXTwitter } from "react-icons/fa6"; 
+import { FaXTwitter } from "react-icons/fa6";
 import { RiApps2AiLine } from "react-icons/ri";
 
 export default function Navbar() {
@@ -23,10 +23,10 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-transparent">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black  backdrop-blur-md shadow-lg">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 
                   backdrop-blur-sm">
-        
+
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
@@ -66,36 +66,44 @@ export default function Navbar() {
           <a href="#" className="text-lime-400 hover:text-lime-300 transition">
             <RiApps2AiLine size={25} />
           </a>
-          
+
           <ThemeToggle />
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} /> : <RiApps2AiLine size={24} className="text-white" />}
           </button>
         </div>
       </nav>
 
       {/* Mobile Menu */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 md:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu Drawer */}
       <div
         className={clsx(
-          "fixed top-0 right-0 h-full w-64 bg-white dark:bg-neutral-900 shadow-lg transform transition-transform duration-300 md:hidden",
+          "fixed top-0 right-0 h-screen w-64 bg-white shadow-lg transform transition-transform duration-300 md:hidden",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
         <div className="flex justify-end p-4">
           <button onClick={() => setIsOpen(false)}>
-            <X size={24} className="text-neutral-900 dark:text-neutral-100" />
+            <X size={24} className="text-neutral-900" />
           </button>
         </div>
-        <ul className="flex flex-col gap-6 p-6 text-lg text-neutral-800 dark:text-neutral-200">
+        <ul className="flex flex-col gap-6 p-6 text-lg text-neutral-900">
           {menuItems.map((item) => (
             <li key={item.name}>
               <Link
                 href={item.href}
-                className="hover:text-lime-400 transition-colors"
+                className="hover:text-lime-500 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

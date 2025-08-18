@@ -1,0 +1,4 @@
+"service-card px-4 rounded-2xl bg-gradient-to-br from-gray-900 via-black to-gray-950 
+                 flex flex-col items-center text-center justify-between
+                 transition-transform duration-500 hover:scale-105 hover:rotate-1 
+                 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]"

@@ -26,7 +26,7 @@ const WhyChoose = () => {
   ];
 
   return (
-    <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20 h-screen">
+    <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
       <div className="grid lg:grid-cols-[1.2fr_1.8fr] gap-12 items-center">
         {/* Left Content */}
         <div className="text-left container flex-1">

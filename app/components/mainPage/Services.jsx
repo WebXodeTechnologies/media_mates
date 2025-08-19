@@ -88,7 +88,7 @@ const Services = () => {
                 alt={service.title}
                 width={80}
                 height={80}
-                className="object-contain "
+                className="object-contain rounded-full shadow-lg"
                 unoptimized
               />
             </div>
@@ -106,8 +106,7 @@ const Services = () => {
           Are you interested to work together and get a free quote?
         </p>
         <button
-          className="inline-flex items-center gap-3 px-8 py-3 rounded-full text-black bg-green-400 hover:bg-green-500 
-                           transition-all duration-300 text-lg sm:text-base shadow-[0_0_15px_rgba(16,185,129,0.8)] hover:shadow-[0_0_30px_rgba(16,185,129,0.9)] hover:scale-105"
+          className="inline-flex items-center gap-3 px-8 py-3 rounded-full text-black bg-green-400 hover:bg-green-500 transition-all duration-300 text-lg sm:text-base shadow-[0_0_15px_rgba(16,185,129,0.8)] hover:shadow-[0_0_30px_rgba(16,185,129,0.9)] hover:scale-105"
         >
           Get a Quote <ArrowUpRight size={20} />
         </button>

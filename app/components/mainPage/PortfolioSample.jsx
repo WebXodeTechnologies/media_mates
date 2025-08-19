@@ -62,8 +62,8 @@ const PortFolio = () => {
     <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
       {/* Heading */}
       <div className="text-center mb-12">
-        <p className="uppercase text-sm text-green-400 font-semibold mb-3 tracking-wide">
-          Portfolio
+        <p className="uppercase text-md text-green-400 font-semibold mb-3 tracking-wide">
+         <span className="">✱</span> Portfolio
         </p>
         <h2 className="text-4xl font-bold text-white tracking-wide leading-relaxed">
           Showcasing our{" "}

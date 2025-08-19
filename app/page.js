@@ -5,17 +5,19 @@ import Services from "@/app/components/mainPage/Services";
 import WhyChoose from "@/app/components/mainPage/WhyChoose";
 import PortFolio from "@/app/components/mainPage/PortfolioSample";
 import FeaturesSection from "@/app/components/mainPage/FeaturesSection";
+import ToolsSection from "@/app/components/mainPage/ToolsSection";
 
 export default function Home() {
   return (
     <main className="">
       <HeroBody />
       <MarqueeBar />
-      <AboutSample  />
+      <AboutSample />
       <Services />
       <WhyChoose />
-      <PortFolio/>
-      <FeaturesSection  />
+      <PortFolio />
+      <FeaturesSection />
+      <ToolsSection />
     </main>
   );
 }

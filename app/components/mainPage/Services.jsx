@@ -20,7 +20,7 @@ const Services = () => {
       id: 2,
       title: "YouTube Video Creation",
       description: "Engaging content tailored for YouTube.",
-      src: "/services/video-channel.gif",
+      src: "/services/blogger.gif",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const Services = () => {
       description: "Boost visibility with smart media strategies.",
       src: "/services/promotion.gif",
     },
-        {
+    {
       id: 5,
       title: "Photoshoot",
       description: "Professional shoots for personal and business use.",
@@ -63,24 +63,25 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="relative max-w-7xl mx-auto">
       {/* Title */}
-      <div className="text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-black dark:text-white tracking-wide bg-clip-text bg-gradient-to-r from-green-400 via-green-300 to-green-500">
-          Services
+      <div className="text-center">
+        <h2 className="text-md font-semibold text-green-400 uppercase">
+          <span className="text-green-400">✱</span> Services
         </h2>
-        <p className="text-black dark:text-white mt-2 text-xl md:text-2xl">
-          Innovative Creative Services tailored to your Business Growth
+        <p className="text-black dark:text-white mt-2 text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
+          Innovative <span className="text-green-400">Creative Services</span>{" "}
+          tailored to your Business Growth
         </p>
       </div>
 
       {/* Services Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         {services.map((service) => (
           <div
             key={service.id}
-            className="service-card rounded-2xl  bg-gradient-to-br from-gray-900 via-black to-gray-950  transition-transform duration-500 hover:scale-105 hover:rotate-1 
-                 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] shadow-md   p-6 flex flex-col items-center text-center"
+            className="rounded-2xl  bg-gradient-to-br from-gray-900 via-black to-gray-950  transition-transform duration-500 hover:scale-105 hover:rotate-1 
+                 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] shadow-md p-6 flex flex-col items-center justify-center bg-red-400"
           >
             <div className="w-20 h-20 relative mb-4">
               <Image
@@ -105,9 +106,7 @@ const Services = () => {
         <p className="text-lg sm:text-xl text-black dark:text-white mb-6">
           Are you interested to work together and get a free quote?
         </p>
-        <button
-          className="inline-flex items-center gap-3 px-8 py-3 rounded-full text-black bg-green-400 hover:bg-green-500 transition-all duration-300 text-lg sm:text-base shadow-[0_0_15px_rgba(16,185,129,0.8)] hover:shadow-[0_0_30px_rgba(16,185,129,0.9)] hover:scale-105"
-        >
+        <button className="inline-flex items-center gap-3 px-8 py-3 rounded-full text-black bg-green-400 hover:bg-green-500 transition-all duration-300 text-lg sm:text-base shadow-[0_0_15px_rgba(16,185,129,0.8)] hover:shadow-[0_0_30px_rgba(16,185,129,0.9)] hover:scale-105">
           Get a Quote <ArrowUpRight size={20} />
         </button>
       </div>

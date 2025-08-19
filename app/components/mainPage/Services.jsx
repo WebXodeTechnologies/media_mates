@@ -15,35 +15,36 @@ const Services = () => {
       description: "Crafting unique identities for business growth.",
       src: "/services/badge.gif",
     },
+
     {
       id: 2,
-      title: "Photoshoot",
-      description: "Professional shoots for personal and business use.",
-      src: "/services/solo-traveller.gif",
-    },
-    {
-      id: 3,
-      title: "Digital Marketing",
-      description: "Promote your brand and reach audiences online.",
-      src: "/services/person-with-fire.gif",
-    },
-    {
-      id: 4,
       title: "YouTube Video Creation",
       description: "Engaging content tailored for YouTube.",
       src: "/services/video-channel.gif",
     },
     {
-      id: 5,
+      id: 3,
       title: "Website Development",
       description: "Responsive, modern websites for your brand.",
       src: "/services/programmer.gif",
     },
     {
-      id: 6,
+      id: 4,
       title: "Media Promotions",
       description: "Boost visibility with smart media strategies.",
       src: "/services/promotion.gif",
+    },
+        {
+      id: 5,
+      title: "Photoshoot",
+      description: "Professional shoots for personal and business use.",
+      src: "/services/solo-traveller.gif",
+    },
+    {
+      id: 6,
+      title: "Digital Marketing",
+      description: "Promote your brand and reach audiences online.",
+      src: "/services/person-with-fire.gif",
     },
   ];
 
@@ -78,8 +79,8 @@ const Services = () => {
         {services.map((service) => (
           <div
             key={service.id}
-            className="service-card bg-white dark:bg-gray-900 rounded-2xl  bg-gradient-to-br from-gray-900 via-black to-gray-950  transition-transform duration-500 hover:scale-105 hover:rotate-1 
-                 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]shadow-md hover:shadow-xl  p-6 flex flex-col items-center text-center"
+            className="service-card rounded-2xl  bg-gradient-to-br from-gray-900 via-black to-gray-950  transition-transform duration-500 hover:scale-105 hover:rotate-1 
+                 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] shadow-md   p-6 flex flex-col items-center text-center"
           >
             <div className="w-20 h-20 relative mb-4">
               <Image
@@ -87,7 +88,8 @@ const Services = () => {
                 alt={service.title}
                 width={80}
                 height={80}
-                className="object-contain rounded-full"
+                className="object-contain "
+                unoptimized
               />
             </div>
             <h3 className="text-lg font-semibold text-white mb-2">

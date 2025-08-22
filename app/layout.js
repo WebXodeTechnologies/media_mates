@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
         <SmoothScroll>
          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Navbar />
-           <main className="">{children}</main>
+           <main>{children}</main>
             <Footer />
          </ThemeProvider>
          </SmoothScroll>

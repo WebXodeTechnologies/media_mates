@@ -8,6 +8,7 @@ import FeaturesSection from "@/app/components/mainPage/FeaturesSection";
 import ToolsSection from "@/app/components/mainPage/ToolsSection";
 import Expertise from "@/app/components/mainPage/Expertise";
 import WorkingProgress from "@/app/components/mainPage/WorkingProgress";
+import Testimonial from "@/app/components/mainPage/Testimonial";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <ToolsSection />
       <Expertise />
       <WorkingProgress />
+      <Testimonial />
     </main>
   );
 }

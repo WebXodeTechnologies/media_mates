@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import Logo from "@/public/logo/Mediamateslogo.png";
-import LogoDark from "@/public/logo/MediamatesLogoWhite.png";
+import LogoWhite from "@/public/logo/logo1.png";
+import Logo from "@/public/logo/logo2.png";
 
 import {
   FaFacebook,
@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Column 1: Logo + Tagline */}
         <div>
           <Image
-            src={theme === "dark" ? LogoDark : Logo}
+            src={theme === "dark" ? Logo : LogoWhite}
             alt="Media Mates Logo"
             width={180}
             height={180}

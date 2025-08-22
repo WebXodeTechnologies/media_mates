@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Menu, X, Facebook, Instagram } from "lucide-react";
 import { useTheme } from "next-themes";
 import ThemeToggle from "./ThemeToggle";
-import Logo from "@/public/logo/Mediamateslogo.png";
-import LogoDark from "@/public/logo/MediamatesLogoWhite.png";
+import LogoWhite from "@/public/logo/logo1.png";
+import LogBlack from "@/public/logo/logo2.png";
 import Image from "next/image";
 import clsx from "clsx";
 import { FaXTwitter } from "react-icons/fa6";
@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src={theme === "dark" ? LogoDark : LogoDark}
+            src={theme === "dark" ? LogBlack : LogoWhite}
             alt="Mediamates Logo"
             width={200}
             height={200}

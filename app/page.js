@@ -7,6 +7,7 @@ import PortFolio from "@/app/components/mainPage/PortfolioSample";
 import FeaturesSection from "@/app/components/mainPage/FeaturesSection";
 import ToolsSection from "@/app/components/mainPage/ToolsSection";
 import Expertise from "@/app/components/mainPage/Expertise";
+import WorkingProgress from "@/app/components/mainPage/WorkingProgress";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <FeaturesSection />
       <ToolsSection />
       <Expertise />
+      <WorkingProgress />
     </main>
   );
 }

@@ -103,7 +103,7 @@ const Expertise = () => {
           </div>
           <div className="flex justify-center items-center gap-2">
             <span className="text-lime-400 font-semibold text-lg">40+</span>
-            <span className="text-md">Happy Clients</span>
+            <span className="text-md dark:text-white text-white">Happy Clients</span>
           </div>
         </div>
 

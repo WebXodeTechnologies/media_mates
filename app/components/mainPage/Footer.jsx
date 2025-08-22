@@ -1,32 +1,39 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import LogoWhite from "@/public/logo/logo1.png";
-import Logo from "@/public/logo/logo2.png";
+import LogoWhite from "@/public/logo/logo1.png"; // Light mode logo
+import LogoDark from "@/public/logo/logo2.png";  // Dark mode logo
 
 import {
   FaFacebook,
   FaInstagram,
   FaYoutube,
   FaLinkedin,
-} from "react-icons/fa6";
+} from "react-icons/fa";
 
 export default function Footer() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   return (
     <footer className="border-t border-gray-500">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        
         {/* Column 1: Logo + Tagline */}
         <div>
-          <Image
-            src={theme === "dark" ? LogoWhite : Logo}
-            alt="Media Mates Logo"
-            width={180}
-            height={180}
-            className="mb-4 transition-transform duration-300 hover:scale-105"
-          />
+          {mounted && (
+            <Image
+              src={theme === "dark" ? LogoWhite : LogoDark}
+              alt="Media Mates Logo"
+              width={180}
+              height={180}
+              className="mb-4 transition-transform duration-300 hover:scale-105"
+            />
+          )}
           <p className="text-base mb-6 max-w-xs">
             Turning your story into a vision with branding, promotions, and creative media solutions.
           </p>
@@ -44,31 +51,11 @@ export default function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-3 text-lg">
-            <li>
-              <Link href="/" className="hover:text-lime-500 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-lime-500 transition">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/services" className="hover:text-lime-500 transition">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-lime-500 transition">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacy" className="hover:text-lime-500 transition">
-                Privacy Policy
-              </Link>
-            </li>
+            <li><Link href="/" className="hover:text-lime-500 transition">Home</Link></li>
+            <li><Link href="/about" className="hover:text-lime-500 transition">About Us</Link></li>
+            <li><Link href="/services" className="hover:text-lime-500 transition">Services</Link></li>
+            <li><Link href="/contact" className="hover:text-lime-500 transition">Contact</Link></li>
+            <li><Link href="/privacy" className="hover:text-lime-500 transition">Privacy Policy</Link></li>
           </ul>
         </div>
 
@@ -78,18 +65,10 @@ export default function Footer() {
             Our Services
           </h3>
           <ul className="space-y-3 text-lg">
-            <li className="hover:text-lime-500 transition">
-              Digital Marketing
-            </li>
-            <li className="hover:text-lime-500 transition">
-              Social Media Management (SMM)
-            </li>
-            <li className="hover:text-lime-500 transition">
-              Product Photoshoot
-            </li>
-            <li className="hover:text-lime-500 transition">
-              Personal Branding
-            </li>
+            <li className="hover:text-lime-500 transition">Digital Marketing</li>
+            <li className="hover:text-lime-500 transition">Social Media Management (SMM)</li>
+            <li className="hover:text-lime-500 transition">Product Photoshoot</li>
+            <li className="hover:text-lime-500 transition">Personal Branding</li>
             <li className="hover:text-lime-500 transition">Media Promotions</li>
           </ul>
         </div>
@@ -100,27 +79,17 @@ export default function Footer() {
             Follow Us
           </h3>
           <div className="flex flex-col gap-4 text-lg">
-            <a
-              href="#"
-              className="flex items-center gap-2 hover:text-lime-500 transition"
-            >
+            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaFacebook /> Facebook
             </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 hover:text-lime-500 transition"
-            >
+            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaInstagram /> Instagram
             </a>
-            <a
-              href="#"
-              className="flex items-center gap-2 hover:text-lime-500 transition"
-            >
+            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaYoutube /> YouTube
             </a>
-            <a
-              href="#"className="flex items-center gap-2 hover:text-lime-500 transition"
-            ><FaLinkedin /> LinkedIn
+            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
+              <FaLinkedin /> LinkedIn
             </a>
           </div>
         </div>
@@ -128,8 +97,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-neutral-200 dark:border-neutral-700 mt-12 py-6 text-center text-xs dark:text-white">
-        © {new Date().getFullYear()} Developed by Webxode Technologies. All
-        rights reserved.
+        © {new Date().getFullYear()} Developed by Webxode Technologies. All rights reserved.
       </div>
     </footer>
   );

@@ -37,24 +37,18 @@ const Testimonial = () => {
 
   // Navigate Prev
   const prevTestimonial = () => {
-    setCurrent((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
+    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   // Navigate Next
   const nextTestimonial = () => {
-    setCurrent((prev) =>
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
+    setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
   // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent((prev) =>
-        prev === testimonials.length - 1 ? 0 : prev + 1
-      );
+      setCurrent((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
     }, 5000);
 
     return () => clearInterval(interval); // cleanup
@@ -66,10 +60,11 @@ const Testimonial = () => {
     <section className="max-w-7xl mx-auto text-white py-16 px-6 md:px-12 lg:px-24">
       <div className="text-center mb-12">
         <p className="text-green-400 font-semibold tracking-wide uppercase">
-          Testimonials
+          <span className="text-lg">✱</span> Testimonials
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold mt-2">
-          Hear what <span className="text-green-400">our happy</span> clients say
+        <h2 className="text-3xl md:text-4xl font-bold mt-2 text-black dark:text-white">
+          Hear what <span className="text-green-400">our happy</span> clients
+          say
         </h2>
       </div>
 
@@ -84,24 +79,26 @@ const Testimonial = () => {
         </div>
 
         {/* Right: Testimonial Card */}
-        <div className="bg-zinc-900 p-8 rounded-2xl shadow-lg flex-1 relative">
+        <div
+          className="relative bg-zinc-900/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg flex-1 
+             transition-all duration-300 hover:shadow-[0_8px_30px_-4px_rgba(163,230,53,0.5)] 
+             hover:before:opacity-100">
+          {/* Glow effect at bottom using ::before */}
+          <div
+            className="absolute bottom-0 left-0 w-full h-1 bg-lime-400 opacity-0 
+                  group-hover:opacity-100 transition-all duration-300 rounded-b-2xl"
+          ></div>
+
           {/* Stars & Rating */}
           <div className="flex items-center mb-4">
             {[...Array(rating)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-5 h-5 text-green-400 fill-current"
-              />
+              <Star key={i} className="w-5 h-5 text-green-400 fill-current" />
             ))}
-            <span className="ml-2 text-gray-300 font-medium">
-              {rating}.0
-            </span>
+            <span className="ml-2 text-gray-300 font-medium">{rating}.0</span>
           </div>
 
           {/* Feedback */}
-          <p className="text-gray-300 leading-relaxed italic">
-            “{feedback}”
-          </p>
+          <p className="text-gray-300 leading-relaxed italic">“{feedback}”</p>
 
           {/* Divider */}
           <div className="border-t border-gray-700 my-6"></div>

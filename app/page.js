@@ -6,6 +6,7 @@ import WhyChoose from "@/app/components/mainPage/WhyChoose";
 import PortFolio from "@/app/components/mainPage/PortfolioSample";
 import FeaturesSection from "@/app/components/mainPage/FeaturesSection";
 import ToolsSection from "@/app/components/mainPage/ToolsSection";
+import Expertise from "@/app/components/mainPage/Expertise";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <PortFolio />
       <FeaturesSection />
       <ToolsSection />
+      <Expertise />
     </main>
   );
 }

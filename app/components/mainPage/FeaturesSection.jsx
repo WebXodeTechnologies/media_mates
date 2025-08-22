@@ -9,11 +9,11 @@ const FeaturesSection = () => {
         
         {/* Left Content */}
         <div className="">
-          <p className="text-green-400 font-semibold mb-2 flex items-center gap-2">
+          <p className="text-lime-400 font-semibold mb-2 flex items-center gap-2">
             <span className="text-xl">✱</span> OUR FEATURE
           </p>
           <h2 className="text-4xl font-bold leading-snug mb-4 text-black dark:text-white">
-            Explore our <span className="text-green-400 ">features and</span>{" "}
+            Explore our <span className="text-lime-400 ">features and</span>{" "}
             unique offerings
           </h2>
           <p className="text-black dark:text-white text-lg mb-4">
@@ -62,15 +62,15 @@ const FeaturesSection = () => {
           </p>
           <ul className="space-y-3">
             <li className="flex items-center gap-2 text-black dark:text-white">
-              <CheckCircle className="text-green-400" size={20} />
+              <CheckCircle className="text-lime-400" size={20} />
               User-Centric Interface Design
             </li>
             <li className="flex items-center gap-2 text-black dark:text-white">
-              <CheckCircle className="text-green-400" size={20} />
+              <CheckCircle className="text-lime-400" size={20} />
               Cutting-Edge Technology Use
             </li>
             <li className="flex items-center gap-2 text-black dark:text-white">
-              <CheckCircle className="text-green-400" size={20} />
+              <CheckCircle className="text-lime-400" size={20} />
               Scalable and Flexible Solutions
             </li>
           </ul>

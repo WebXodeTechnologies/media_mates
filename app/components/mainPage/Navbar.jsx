@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <Image
-            src={theme === "dark" ? LogBlack : LogoWhite}
+            src={theme === "dark" ? LogoWhite : LogoWhite}
             alt="Mediamates Logo"
             width={200}
             height={200}

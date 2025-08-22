@@ -3,14 +3,12 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { Phone } from "lucide-react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Expertise = () => {
   const clientBadgeRef = useRef(null);
   const phoneBadgeRef = useRef(null);
   const progressRefs = useRef([]); // store multiple refs
+  const rightColRef = useRef(null); // right column wrapper
 
   useEffect(() => {
     // Floating animations
@@ -34,30 +32,33 @@ const Expertise = () => {
       });
     }
 
-    // Progress bar animation on scroll
-    progressRefs.current.forEach((bar) => {
-      if (bar) {
-        const targetWidth = bar.getAttribute("data-progress");
-
-        gsap.fromTo(
-          bar,
-          { width: "0%" },
-          {
-            width: targetWidth,
-            duration: 2,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: bar,
-              start: "top 80%",
-            },
+    // Hover trigger for progress bar animation
+    const rightCol = rightColRef.current;
+    if (rightCol) {
+      const handleMouseEnter = () => {
+        progressRefs.current.forEach((bar) => {
+          if (bar) {
+            const targetWidth = bar.getAttribute("data-progress");
+            gsap.fromTo(
+              bar,
+              { width: "0%" }, // reset on hover
+              {
+                width: targetWidth,
+                duration: 2,
+                ease: "power2.out",
+              }
+            );
           }
-        );
-      }
-    });
+        });
+      };
+
+      rightCol.addEventListener("mouseenter", handleMouseEnter);
+      return () => rightCol.removeEventListener("mouseenter", handleMouseEnter);
+    }
   }, []);
 
   return (
-    <section className="text-white py-20 max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center md:items-start gap-12">
+    <section className="text-white dark:text-black py-20 max-w-7xl mx-auto px-6 md:px-16 flex flex-col md:flex-row items-center md:items-start gap-12">
       {/* Left Side */}
       <div className="relative flex flex-col items-center md:w-1/2">
         {/* Circle BG */}
@@ -117,15 +118,15 @@ const Expertise = () => {
       </div>
 
       {/* Right Side */}
-      <div className="md:w-1/2 space-y-6">
-        <h4 className="uppercase text-sm tracking-widest text-lime-400">
-          Our Expertise
-        </h4>
-        <h2 className="text-4xl font-bold leading-snug">
+      <div ref={rightColRef} className="md:w-1/2 space-y-6 cursor-pointer">
+         <p className="text-lime-400 font-semibold mb-2 flex items-center justify-center gap-2">
+          <span className="text-lg">✱</span> OUR EXPERTISE
+        </p>
+        <h2 className="text-4xl font-bold leading-snug text-black dark:text-white">
           Driving <span className="text-lime-400">media innovation</span> with
           impactful strategies
         </h2>
-        <p className="text-gray-300 leading-relaxed">
+        <p className="leading-relaxed text-black dark:text-white">
           At our media agency, we specialize in crafting high-impact campaigns
           that merge creativity, storytelling, and technology. From brand
           identity to digital growth, we empower businesses with strategies that
@@ -135,7 +136,7 @@ const Expertise = () => {
         {/* Progress Bars */}
         <div className="space-y-6 pt-4">
           <div>
-            <div className="flex justify-between mb-1">
+            <div className="flex justify-between mb-1 text-black dark:text-white">
               <span>Brand Strategy</span>
               <span>89%</span>
             </div>
@@ -143,13 +144,14 @@ const Expertise = () => {
               <div
                 ref={(el) => (progressRefs.current[0] = el)}
                 data-progress="89%"
+                style={{ width: "0%" }} // start collapsed
                 className="bg-lime-400 h-2 rounded-full"
               ></div>
             </div>
           </div>
 
           <div>
-            <div className="flex justify-between mb-1">
+            <div className="flex justify-between mb-1 text-black dark:text-white">
               <span>Digital Marketing</span>
               <span>95%</span>
             </div>
@@ -157,6 +159,7 @@ const Expertise = () => {
               <div
                 ref={(el) => (progressRefs.current[1] = el)}
                 data-progress="95%"
+                style={{ width: "0%" }} // start collapsed
                 className="bg-lime-400 h-2 rounded-full"
               ></div>
             </div>

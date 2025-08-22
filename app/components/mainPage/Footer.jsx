@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Column 1: Logo + Tagline */}
         <div>
           <Image
-            src={theme === "dark" ? Logo : LogoWhite}
+            src={theme === "dark" ? LogoWhite : Logo}
             alt="Media Mates Logo"
             width={180}
             height={180}

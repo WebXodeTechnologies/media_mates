@@ -46,13 +46,13 @@ const tools = [
       <div className="max-w-7xl mx-auto text-center">
         
         {/* Badge */}
-        <p className="text-green-400 font-semibold mb-2 flex items-center justify-center gap-2">
+        <p className="text-lime-400 font-semibold mb-2 flex items-center justify-center gap-2">
           <span className="text-lg">✱</span> TOOLS
         </p>
 
         {/* Heading */}
         <h2 className="text-4xl font-bold leading-snug mb-12 text-black dark:text-white">
-          Empowering <span className="text-green-400">creativity with</span>{" "}
+          Empowering <span className="text-lime-400">creativity with</span>{" "}
           cutting-edge tools
         </h2>
 

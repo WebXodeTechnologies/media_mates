@@ -9,6 +9,9 @@ import ToolsSection from "@/app/components/mainPage/ToolsSection";
 import Expertise from "@/app/components/mainPage/Expertise";
 import WorkingProgress from "@/app/components/mainPage/WorkingProgress";
 import Testimonial from "@/app/components/mainPage/Testimonial";
+import Faq from "@/app/components/mainPage/Faq";
+import Blog from "@/app/components/mainPage/Blog";
+import CTASection from "@/app/components/mainPage/CTASection";
 
 export default function Home() {
   return (
@@ -24,6 +27,9 @@ export default function Home() {
       <Expertise />
       <WorkingProgress />
       <Testimonial />
+      <Faq /> 
+      <Blog />
+      <CTASection />
     </main>
   );
 }

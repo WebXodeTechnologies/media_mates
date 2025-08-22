@@ -59,11 +59,11 @@ const Testimonial = () => {
   return (
     <section className="max-w-7xl mx-auto text-white py-16 px-6 md:px-12 lg:px-24">
       <div className="text-center mb-12">
-        <p className="text-green-400 font-semibold tracking-wide uppercase">
+        <p className="text-lime-400 font-semibold tracking-wide uppercase">
           <span className="text-lg">✱</span> Testimonials
         </p>
         <h2 className="text-3xl md:text-4xl font-bold mt-2 text-black dark:text-white">
-          Hear what <span className="text-green-400">our happy</span> clients
+          Hear what <span className="text-lime-400">our happy</span> clients
           say
         </h2>
       </div>
@@ -92,7 +92,7 @@ const Testimonial = () => {
           {/* Stars & Rating */}
           <div className="flex items-center mb-4">
             {[...Array(rating)].map((_, i) => (
-              <Star key={i} className="w-5 h-5 text-green-400 fill-current" />
+              <Star key={i} className="w-5 h-5 text-lime-400 fill-current" />
             ))}
             <span className="ml-2 text-gray-300 font-medium">{rating}.0</span>
           </div>

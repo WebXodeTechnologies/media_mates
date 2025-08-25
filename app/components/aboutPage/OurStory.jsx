@@ -123,7 +123,7 @@ const OurStory = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Ready to grow your brand with Media Mates?
           </h3>
-          <p className="text-gray-400 mb-6">
+          <p className="text-black dark:text-white mb-10">
             Let’s bring your ideas to life through creative media and digital
             solutions.
           </p>

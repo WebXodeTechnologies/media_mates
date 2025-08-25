@@ -8,7 +8,7 @@ const data = [
         type: "card",
         icon: <TbScanEye />,
         title: "Our Mission",
-        desc: "Empowering brands with innovative, visually stunning designs that inspire, engage, and leave a lasting impact.",
+        desc: "To empower businesses and creators with impactful digital storytelling — through branding, media, and technology that spark engagement and drive measurable growth.",
     },
     {
         type: "image",
@@ -19,7 +19,7 @@ const data = [
         type: "card",
         icon: <IoDiamondSharp />,
         title: "Our Values",
-        desc: "Building trust, creativity, and precision in every project we deliver for our clients.",
+        desc: "We thrive on creativity, authenticity, and innovation — building campaigns that earn trust, inspire audiences, and deliver real results every single time.",
     },
     {
         type: "image",
@@ -30,7 +30,7 @@ const data = [
         type: "card",
         icon: <IoLogoAppleAr />,
         title: "Our Vision",
-        desc: "To redefine digital experiences that transform businesses and captivate audiences worldwide.",
+        desc: "To become a leading creative force that shapes the future of media and marketing, redefining how brands connect with people in the digital-first world.",
     },
     {
         type: "image",

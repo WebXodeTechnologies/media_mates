@@ -53,7 +53,7 @@ const AboutHero = () => {
                         className="flex items-center gap-2 px-6 py-3 
             bg-lime-600 text-white font-semibold text-lg rounded-full shadow-lg 
             hover:bg-lime-500 dark:bg-lime-400 dark:text-black dark:hover:bg-white dark:hover:text-black
-            transition-all duration-300"
+            transition-all duration-300 hover:shadow-[0_0_20px_#a3e635]"
                     >
                         Work With Us <ArrowRight size={20} />
                     </a>

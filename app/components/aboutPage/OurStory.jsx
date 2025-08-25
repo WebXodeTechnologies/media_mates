@@ -129,9 +129,9 @@ const OurStory = () => {
           </p>
           <Link
             href="/contact"
-            className="px-8 py-4 bg-lime-400 text-black font-semibold rounded-full shadow-lg hover:bg-white transition-all duration-300"
+            className="px-8 py-4 bg-lime-400 text-black font-semibold rounded-full shadow-lg hover:bg-white hover:shadow-[0_0_20px_#a3e635] transition-all duration-300"
           >
-            Get In Touch <ArrowUpRight className="inline-block w-5 h-5 ml-2" />
+            Get In Touch <ArrowUpRight className="inline-block w-5 h-5 ml-2 " />
           </Link>
         </motion.div>
       </div>

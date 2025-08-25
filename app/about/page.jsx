@@ -3,6 +3,7 @@ import React from "react";
 import AboutHero from "@/app/components/aboutPage/AboutHero";
 import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
 import OurStory from "@/app/components/aboutPage/OurStory";
+import OurVison from "@/app/components/aboutPage/OurVison";
 
 // ✅ Metadata for SEO
 export const metadata = {
@@ -57,6 +58,7 @@ const AboutPage = () => {
     <AboutHero />
     <MarqueeBar />
     <OurStory />
+    <OurVison />
    </div>
   );
 };

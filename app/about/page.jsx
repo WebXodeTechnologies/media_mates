@@ -1,6 +1,8 @@
 // app/about/page.jsx
 import React from "react";
 import AboutHero from "@/app/components/aboutPage/AboutHero";
+import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
+import OurStory from "@/app/components/aboutPage/OurStory";
 
 // ✅ Metadata for SEO
 export const metadata = {
@@ -53,6 +55,8 @@ const AboutPage = () => {
   return (
    <div className="">
     <AboutHero />
+    <MarqueeBar />
+    <OurStory />
    </div>
   );
 };

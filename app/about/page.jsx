@@ -4,6 +4,10 @@ import AboutHero from "@/app/components/aboutPage/AboutHero";
 import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
 import OurStory from "@/app/components/aboutPage/OurStory";
 import OurVison from "@/app/components/aboutPage/OurVison";
+import WhyChoose from "@/app/components/mainPage/WhyChoose";
+import What from "@/app/components/aboutPage/What";
+import Expertise from "@/app/components/mainPage/Expertise";
+import Team from "@/app/components/aboutPage/Team";
 
 // ✅ Metadata for SEO
 export const metadata = {
@@ -59,6 +63,10 @@ const AboutPage = () => {
     <MarqueeBar />
     <OurStory />
     <OurVison />
+    <WhyChoose />
+    <What />
+    <Expertise />
+    <Team />
    </div>
   );
 };

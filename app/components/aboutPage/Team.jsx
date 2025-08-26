@@ -9,7 +9,7 @@ const Team = () => {
             name: "Bharth",
             role: "Founder & CEO",
             image: "/team/WhatsApp Image 2025-08-25 at 11.16.30_f01b3faf.jpg",
-            socials: { facebook: "#", linkedin: "#", instagram: "#", youtube: "#" },
+            socials: { facebook: "#", linkedin: "#", instagram: "https://www.instagram.com/mediamates_?igsh=bzF2enAwdWV4bmk2", youtube: "#" },
         },
         {
             name: "Jegan Ravikumar",
@@ -27,7 +27,7 @@ const Team = () => {
             name: "Akash S M",
             role: "Full Stack Developer",
             image: "/team/ak.jpg",
-            socials: { facebook: "#", linkedin: "#", instagram: "https://www.instagram.com/webxode/", youtube: "#" },
+            socials: { facebook: "#", linkedin: "https://www.linkedin.com/in/akashsm-dev/", instagram: "https://www.instagram.com/webxode/", youtube: "#" },
         },
     ];
 

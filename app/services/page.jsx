@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "@/app/components/servicePage/HeroSection";
+import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
 
 export const metadata = {
   title: "Services | Media Mates - Digital Media & Marketing Agency",
@@ -50,6 +51,7 @@ const page = () => {
   return (
     <div>
       <HeroSection />
+      <MarqueeBar />
       
     </div>
   )

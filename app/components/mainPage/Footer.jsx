@@ -22,7 +22,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-500">
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
-        
+
         {/* Column 1: Logo + Tagline */}
         <div>
           {mounted && (
@@ -39,7 +39,9 @@ export default function Footer() {
           </p>
           <Link
             href="/contact"
-            className="mt-6 inline-block w-full text-center bg-lime-500 text-white px-5 py-3 rounded-xl text-lg font-medium hover:shadow-lg hover:bg-lime-600 transition"
+            className="mt-6 inline-block w-full text-center px-5 py-3   bg-lime-600 text-white font-semibold text-lg rounded-full shadow-lg 
+            hover:bg-lime-500 dark:bg-lime-400 dark:text-black dark:hover:bg-white dark:hover:text-black
+            transition-all duration-300 hover:shadow-[0_0_20px_#a3e635]"
           >
             Let’s Work Together
           </Link>

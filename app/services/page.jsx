@@ -1,6 +1,9 @@
 import React from "react";
 import HeroSection from "@/app/components/servicePage/HeroSection";
 import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
+import DigitalMarketing from "@/app/components/servicePage/DigitalMarketing";
+import DgService from "@/app/components/servicePage/DgService";
+
 
 export const metadata = {
   title: "Services | Media Mates - Digital Media & Marketing Agency",
@@ -52,6 +55,7 @@ const page = () => {
     <div>
       <HeroSection />
       <MarqueeBar />
+      <DgService />
       
     </div>
   )

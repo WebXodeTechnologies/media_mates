@@ -6,23 +6,23 @@ export default function DgService() {
         <ServicePage
             heroImg="/servicesDetals/service-single-img.jpg"
             title="Digital Marketing"
-            description="Our digital marketing approach is a data-driven strategy..."
+            description="Turning bold ideas into stories your audience loves."
             features={[
-                "Content Marketing Explains Your Brand’s Story",
-                "Personalized Email Marketing To Nurture Leads",
-                "Social Media Marketing That Engages & Converts",
-                "Comprehensive SEO Services For Visibility",
-                "Performance Analytics & Reporting",
+                "Creative Campaigns That Inspire",
+                "Engaging Social Media Strategies",
+                "Compelling Content Production",
+                "Brand Storytelling That Connects",
+                "Data-Driven Performance Insights",
             ]}
             featureImg="/servicesDetals/service-entry-img.jpg"
             sidebarServices={[
-                "Branding & Identity",
-                "Creative Content Production",
-                "Content Strategy & Marketing",
-                "E-Commerce Solutions",
-                "UX / UI Design",
-                "Performance Marketing",
+                "Media Promotions",
                 "Social Media Management",
+                "Youtube Content Creation",
+                "Branding",
+                "Digital Marketing",
+                "Website Development",
+                "Wedding Photography",
             ]}
             processSteps={[
                 {

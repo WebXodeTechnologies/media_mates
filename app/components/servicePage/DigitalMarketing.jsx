@@ -35,7 +35,7 @@ export default function DigitalMarketing({
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <ul className="space-y-2 py-7 text-black dark:text-white">
+            <ul className="space-y-2 py-7 text-black dark:text-white text-lg">
               {features.map((feature, idx) => (
                 <li key={idx}>✅ {feature}</li>
               ))}

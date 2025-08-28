@@ -9,6 +9,8 @@ import What from "@/app/components/aboutPage/What";
 import Expertise from "@/app/components/mainPage/Expertise";
 import Team from "@/app/components/aboutPage/Team";
 import JourneySection from "@/app/components/aboutPage/JourneySection";
+import CTASection from "@/app/components/mainPage/CTASection";
+
 
 // ✅ Metadata for SEO
 export const metadata = {
@@ -69,6 +71,7 @@ const AboutPage = () => {
     <Expertise />
     <Team />
     <JourneySection />
+    <CTASection />
    </div>
   );
 };

@@ -9,27 +9,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SmoothScroll = ({ children }) => {
   const scrollRef = useRef(null);
+  const locoRef = useRef(null); // keep reference to Locomotive
 
   useEffect(() => {
     if (!scrollRef.current) return;
 
-    let locoScroll;
     let refreshHandler;
 
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
 
-      locoScroll = new LocomotiveScroll({
+      // Initialize Locomotive Scroll
+      locoRef.current = new LocomotiveScroll({
         el: scrollRef.current,
         smooth: true,
         multiplier: 1,
-        lerp: 0.08, // lower = more smooth
+        lerp: 0.08, // buttery smooth
       });
 
-      // Update ScrollTrigger on loco scroll
+      const locoScroll = locoRef.current;
+
+      // Update ScrollTrigger on scroll
       locoScroll.on("scroll", ScrollTrigger.update);
 
-      // Proxy locomotive for ScrollTrigger
+      // Proxy Locomotive for ScrollTrigger
       ScrollTrigger.scrollerProxy(scrollRef.current, {
         scrollTop(value) {
           return arguments.length
@@ -47,29 +50,22 @@ const SmoothScroll = ({ children }) => {
         pinType: scrollRef.current.style.transform ? "transform" : "fixed",
       });
 
-      // Smooth refresh handling
+      // Force refresh Locomotive on window load
       refreshHandler = () => locoScroll.update();
       ScrollTrigger.addEventListener("refresh", refreshHandler);
-      ScrollTrigger.refresh();
-
-      // Force update for images/fonts
       requestAnimationFrame(() => locoScroll.update());
+      ScrollTrigger.refresh();
     })();
 
     return () => {
-      if (locoScroll) locoScroll.destroy();
+      if (locoRef.current) locoRef.current.destroy();
       if (refreshHandler) ScrollTrigger.removeEventListener("refresh", refreshHandler);
       ScrollTrigger.killAll();
     };
   }, []);
 
   return (
-    <div
-      id="main-container"
-      ref={scrollRef}
-      data-scroll-container
-      className="overflow-hidden"
-    >
+    <div ref={scrollRef} data-scroll-container className="overflow-hidden">
       {children}
     </div>
   );

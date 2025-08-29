@@ -61,7 +61,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-   <div className="">
+   <main className="">
     <AboutHero />
     <MarqueeBar />
     <OurStory />
@@ -72,7 +72,7 @@ const AboutPage = () => {
     <Team />
     <JourneySection />
     <CTASection />
-   </div>
+   </main>
   );
 };
 

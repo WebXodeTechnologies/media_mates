@@ -52,12 +52,14 @@ export const metadata = {
 
 const page = () => {
   return (
-    <div>
-      <HeroSection />
-      <MarqueeBar />
-      <DgService />
-      <CTASection />
-    </div>
+    <div className="flex flex-col min-h-screen">
+  <main className="flex-grow">
+    <HeroSection />
+    <MarqueeBar />
+    <DgService />
+    <CTASection />
+  </main>
+</div>
   )
 }
 

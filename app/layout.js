@@ -68,15 +68,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
-      <body className="antialiased">
+      <body className="antialiased h-screen flex flex-col">
         <SmoothScroll>
-         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Navbar />
-           <main>{children}</main>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+            <Navbar />
+            {/* Main content takes remaining space */}
+            <main className="flex-1">
+              {children}
+            </main>
             <Footer />
-         </ThemeProvider>
-         </SmoothScroll>
-        </body>
+          </ThemeProvider>
+        </SmoothScroll>
+      </body>
     </html>
   );
 }
+

@@ -27,7 +27,7 @@ export default function Home() {
       <Expertise />
       <WorkingProgress />
       <Testimonial />
-      <Faq /> 
+      <Faq />
       <Blog />
       <CTASection />
     </main>

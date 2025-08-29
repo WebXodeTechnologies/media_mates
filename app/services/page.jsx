@@ -1,7 +1,6 @@
 import React from "react";
 import HeroSection from "@/app/components/servicePage/HeroSection";
 import MarqueeBar from "@/app/components/mainPage/MarqueeBar";
-import DigitalMarketing from "@/app/components/servicePage/DigitalMarketing";
 import DgService from "@/app/components/servicePage/DgService";
 import CTASection from "@/app/components/mainPage/CTASection";
 
@@ -58,8 +57,6 @@ const page = () => {
       <MarqueeBar />
       <DgService />
       <CTASection />
-      
-      
     </div>
   )
 }

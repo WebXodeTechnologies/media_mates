@@ -34,13 +34,13 @@ const AboutSample = () => {
             <Image
               src="/aboutsample/about-image-1.jpg"
               alt="Team work"
-              fill
+               fill
               className="rounded-2xl object-cover"
             />
           </div>
 
           {/* Second Image */}
-          <div className="relative w-50 sm:w-72 md:w-80 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg translate-x-12 sm:translate-x-16 md:translate-x-20 -translate-y-6 sm:-translate-y-8 md:-translate-y-10">
+          <div className="relative w-50 sm:w-72 md:w-80 h-72 sm:h-90 md:h-96 rounded-2xl overflow-hidden shadow-lg translate-x-12 sm:translate-x-16 md:translate-x-20 -translate-y-6 sm:-translate-y-8 md:-translate-y-10">
             <Image
               src="/aboutsample/about-image-2.jpg"
               alt="Team collaboration"

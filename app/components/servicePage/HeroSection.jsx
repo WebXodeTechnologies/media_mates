@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center text-center overflow-hidden">
+    <section className="relative h-[100vh] flex items-center justify-center text-center overflow-hidden">
       {/* Background Video */}
       <video
         autoPlay

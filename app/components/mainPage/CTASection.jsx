@@ -7,7 +7,7 @@ const CTASection = () => {
         <section className="relative w-full overflow-hidden flex flex-col items-center justify-center py-24">
             {/* Background gradient / subtle grid */}
             <div className="absolute inset-0">
-                <div className="absolute inset-0 opacity-20 bg-[url('/grid.svg')] bg-cover" />
+                <div className="absolute inset-0 opacity-20  bg-cover" />
             </div>
 
             {/* Content wrapper */}

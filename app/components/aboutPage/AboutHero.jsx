@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 const AboutHero = () => {
     return (
-        <section className="relative w-full max-w-7xl py-40 mx-auto flex items-center justify-center overflow-hidden">
+        <section className="relative w-full max-w-7xl py-50 mx-auto flex items-center justify-center overflow-hidden">
             {/* Background Gradient */}
             <div className="absolute inset-0 -z-10">
 

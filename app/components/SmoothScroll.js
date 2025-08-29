@@ -1,28 +1,36 @@
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const SmoothScroll = ({ children }) => {
+  const scrollRef = useRef(null);
+
   useEffect(() => {
+    if (!scrollRef.current) return;
+
     let locoScroll;
+    let refreshHandler;
 
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const scrollEl = document.querySelector("#main-container");
 
       locoScroll = new LocomotiveScroll({
-        el: scrollEl,
+        el: scrollRef.current,
         smooth: true,
-        multiplier: 0.8,
+        multiplier: 1,
+        lerp: 0.08, // lower = more smooth
       });
 
+      // Update ScrollTrigger on loco scroll
       locoScroll.on("scroll", ScrollTrigger.update);
 
-      ScrollTrigger.scrollerProxy(scrollEl, {
+      // Proxy locomotive for ScrollTrigger
+      ScrollTrigger.scrollerProxy(scrollRef.current, {
         scrollTop(value) {
           return arguments.length
             ? locoScroll.scrollTo(value, 0, 0)
@@ -36,27 +44,33 @@ const SmoothScroll = ({ children }) => {
             height: window.innerHeight,
           };
         },
-        pinType: scrollEl.style.transform ? "transform" : "fixed",
+        pinType: scrollRef.current.style.transform ? "transform" : "fixed",
       });
 
-      ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+      // Smooth refresh handling
+      refreshHandler = () => locoScroll.update();
+      ScrollTrigger.addEventListener("refresh", refreshHandler);
       ScrollTrigger.refresh();
 
-      // Fix white space issue after images/fonts
-      window.addEventListener("load", () => {
-        locoScroll.update();
-      });
+      // Force update for images/fonts
+      requestAnimationFrame(() => locoScroll.update());
     })();
 
     return () => {
       if (locoScroll) locoScroll.destroy();
-      ScrollTrigger.kill();
+      if (refreshHandler) ScrollTrigger.removeEventListener("refresh", refreshHandler);
+      ScrollTrigger.killAll();
     };
   }, []);
 
   return (
-    <div id="main-container" data-scroll-container className="overflow-hidden">
-      <section data-scroll-section>{children}</section>
+    <div
+      id="main-container"
+      ref={scrollRef}
+      data-scroll-container
+      className="overflow-hidden"
+    >
+      {children}
     </div>
   );
 };

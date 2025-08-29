@@ -35,7 +35,11 @@ export const metadata = {
       { url: "/logo/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/logo/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
+      {
+        url: "/logo/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
   authors: [{ name: "Media Mates" }],
@@ -61,26 +65,29 @@ export const metadata = {
     title: "Media Mates | Branding, Photography & Promotions in Namakkal",
     description:
       "Photography, videography, branding, and promotions to help businesses and individuals grow in Namakkal.",
-    images: ["/logo/mediamates-logo-main.png"], // Corrected path & name
+    images: ["/logo/mediamates-logo-main.png"],
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className={plusJakartaSans.variable}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={plusJakartaSans.variable}
+    >
       <body className="antialiased">
-        <SmoothScroll>
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-            <Navbar />
-            {/* Main content takes remaining space */}
-            <main className="w-full h-screen">
-              {children}
-            </main>
-            <Footer />
-          </ThemeProvider>
-        </SmoothScroll>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <SmoothScroll>
+            {/* Flex column layout */}
+            <div className="flex flex-col min-h-screen">
+              <Navbar />
+              <main className="flex-grow w-full">{children}</main>
+              <Footer />
+            </div>
+          </SmoothScroll>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-

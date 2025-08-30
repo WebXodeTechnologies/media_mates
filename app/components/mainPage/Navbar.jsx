@@ -8,11 +8,14 @@ import LogoWhite from "@/public/logo/logo1.png";
 import LogBlack from "@/public/logo/logo2.png";
 import Image from "next/image";
 import clsx from "clsx";
-import { FaXTwitter } from "react-icons/fa6";
 import { RiApps2AiLine } from "react-icons/ri";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { ImLocation2 } from "react-icons/im";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false); // NEW STATE
   const { theme } = useTheme();
 
   const menuItems = [
@@ -24,9 +27,8 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-black  backdrop-blur-md shadow-lg">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 
-                  backdrop-blur-sm">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black backdrop-blur-md shadow-lg">
+      <nav className="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 backdrop-blur-sm">
 
         {/* Left: Logo */}
         <Link href="/" className="flex items-center gap-2 group">
@@ -55,31 +57,44 @@ export default function Navbar() {
 
         {/* Right: Social Icons + Theme Toggle */}
         <div className="flex items-center gap-4">
-          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+          <a
+            href="https://www.facebook.com/mediamates.studio"
+            className="text-lime-400 hover:text-lime-300 transition"
+          >
             <Facebook size={20} />
           </a>
-          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+          <a
+            href="https://www.instagram.com/mediamates_/"
+            className="text-lime-400 hover:text-lime-300 transition"
+          >
             <Instagram size={20} />
           </a>
-          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
-            <FaXTwitter size={20} />
-          </a>
-          <a href="#" className="text-lime-400 hover:text-lime-300 transition">
+
+          {/* Trigger Popover */}
+          <button
+            onClick={() => setIsPopoverOpen(true)}
+            className="text-lime-400 hover:text-lime-300 transition"
+          >
             <RiApps2AiLine size={25} />
-          </a>
+          </button>
 
           <ThemeToggle />
+
           {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 transition"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X size={24} /> : <RiApps2AiLine size={24} className="text-white" />}
+            {isOpen ? (
+              <X size={24} />
+            ) : (
+              <RiApps2AiLine size={24} className="text-white" />
+            )}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/50 md:hidden"
@@ -113,6 +128,81 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
+
+      {/* Contact Drawer (Popover) */}
+      <div
+        className={clsx(
+          "fixed top-0 right-0 h-screen py-20 w-80 md:w-96 bg-neutral-900 shadow-2xl z-[100] transform transition-transform duration-500 overflow-y-auto",
+          isPopoverOpen ? "translate-x-0" : "translate-x-full"
+        )}
+      >
+        {/* Close button */}
+        <div className="flex justify-end p-4">
+          <button
+            onClick={() => setIsPopoverOpen(false)}
+            className="p-2 rounded-full hover:bg-neutral-800 transition"
+          >
+            <X size={28} className="text-white" />
+          </button>
+        </div>
+
+        {/* Content */}
+        <div className="px-6 pb-15 text-center text-white">
+          {/* Phone */}
+          <div className="mb-8">
+            <div className="flex justify-center mb-3">
+                <FaPhoneAlt className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+            </div>
+            <h3 className="font-bold text-lg">Phone</h3>
+            <p className="text-gray-300">+91-9150253488</p>
+          </div>
+
+          <hr className="border-neutral-700 my-6" />
+
+          {/* Email */}
+          <div className="mb-8">
+            <div className="flex justify-center mb-3">
+                <MdOutlineMailOutline className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+            </div>
+            <h3 className="font-bold text-lg">Email</h3>
+            <p className="text-gray-300">contact.mediamates@gmail.com</p>
+          </div>
+
+          <hr className="border-neutral-700 my-6" />
+
+          {/* Address */}
+          <div className="mb-8">
+             <div className="flex justify-center mb-3">
+                <ImLocation2 className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+            </div>
+            <h3 className="font-bold text-lg">Address</h3>
+            <p className="text-gray-300">
+              Namakkal <br /> Tamilnadu
+            </p>
+          </div>
+
+          <hr className="border-neutral-700 my-6" />
+
+          {/* Social */}
+          <h3 className="font-bold text-lg mb-4">Stay Connected</h3>
+          <div className="flex justify-center gap-6 text-lime-400 text-2xl">
+            <a href="https://www.facebook.com/mediamates.studio" className="hover:text-white">
+              <Facebook size={28} />
+            </a>
+            <a href="https://www.instagram.com/mediamates_/" className="hover:text-white">
+              <Instagram size={28} />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Background Overlay when open */}
+      {isPopoverOpen && (
+        <div
+          className="fixed inset-0  bg-black/50 z-[90]"
+          onClick={() => setIsPopoverOpen(false)}
+        />
+      )}
     </header>
   );
 }

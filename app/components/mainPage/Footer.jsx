@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import LogoWhite from "@/public/logo/logo1.png"; // Light mode logo
-import LogoDark from "@/public/logo/logo2.png";  
+import LogoDark from "@/public/logo/logo2.png";
 import { GoArrowUpRight } from "react-icons/go";// Dark mode logo
 
 import {
@@ -38,14 +38,14 @@ export default function Footer() {
             Turning your story into a vision with branding, promotions, and creative media solutions.
           </p>
           <div className="text-center mt-14 flex justify-start">
-                    <a
-                      href="/contact"
-                      className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
-                    >
-                      Learn More
-                      <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
-                    </a>
-                  </div>
+            <a
+              href="/contact"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+            >
+              Learn More
+              <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+            </a>
+          </div>
         </div>
 
         {/* Column 2: Quick Links */}

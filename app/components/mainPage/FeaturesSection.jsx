@@ -4,9 +4,9 @@ import { CheckCircle } from "lucide-react";
 
 const FeaturesSection = () => {
   return (
-     <section className="max-w-7xl mx-auto w-full  text-white py-20 px-6">
+    <section className="max-w-7xl mx-auto w-full  text-white py-20 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-        
+
         {/* Left Content */}
         <div className="">
           <p className="text-lime-400 font-semibold mb-2 flex items-center gap-2">
@@ -28,7 +28,7 @@ const FeaturesSection = () => {
             alt="Team Collaboration"
             width={500}
             height={500}
-         
+
             className="object-cover rounded-xl shadow-lg"
           />
         </div>
@@ -36,21 +36,21 @@ const FeaturesSection = () => {
 
       {/* Feature Cards & Right Bullet Section */}
       <div className=" grid md:grid-cols-2 gap-10 items-center">
-        
+
         {/* Feature Cards */}
         <div className="grid sm:grid-cols-3 gap-6">
           <div className="bg-neutral-900 rounded-2xl p-6 text-center shadow-md flex flex-col items-center justify-center">
-        <Image src="/featuresection/icon-feature-1.svg" alt="icon" width={50} height={50}  className=" w-12 h-12 mb-4 object-contain"/>
+            <Image src="/featuresection/icon-feature-1.svg" alt="icon" width={50} height={50} className=" w-12 h-12 mb-4 object-contain" />
             <h3 className="font-semibold">Brand Identity & Design</h3>
           </div>
 
           <div className="bg-neutral-900 rounded-2xl p-6 text-center shadow-md flex flex-col items-center justify-center">
-             <Image src="/featuresection/icon-feature-2.svg" alt="icon" width={50} height={50} className="w-12 h-12 mb-4 object-contain" />
+            <Image src="/featuresection/icon-feature-2.svg" alt="icon" width={50} height={50} className="w-12 h-12 mb-4 object-contain" />
             <h3 className="font-semibold">Creative Content Development </h3>
           </div>
 
           <div className="bg-neutral-900 rounded-2xl p-6 text-center shadow-md flex flex-col items-center justify-center">
-             <Image src="/featuresection/icon-feature-3.svg" alt="icon"width={50} height={50} className="w-12 h-12 mb-4 object-contain"  />
+            <Image src="/featuresection/icon-feature-3.svg" alt="icon" width={50} height={50} className="w-12 h-12 mb-4 object-contain" />
             <h3 className="font-semibold">Digital Marketing Solutions</h3>
           </div>
         </div>

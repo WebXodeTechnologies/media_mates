@@ -103,15 +103,15 @@ const Services = () => {
       </div>
 
       {/* CTA */}
-     <div className="text-center mt-14 flex justify-center">
-               <a
-                 href="/services"
-                 className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
-               >
-                 Learn More
-                 <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
-               </a>
-             </div>
+      <div className="text-center mt-14 flex justify-center">
+        <a
+          href="/services"
+          className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+        >
+          Learn More
+          <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+        </a>
+      </div>
     </section>
   );
 };

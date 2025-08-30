@@ -5,7 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Blog = () => {
 
-      const blogs = [
+  const blogs = [
     {
       id: 1,
       title: "How to Create Impactful Motion Graphics",
@@ -27,7 +27,7 @@ const Blog = () => {
   ];
 
   return (
-      <section className="max-w-7xl mx-auto py-20 px-6 lg:px-20">
+    <section className="max-w-7xl mx-auto py-20 px-6 lg:px-20">
       {/* Section Heading */}
       <div className="text-center mb-12">
         <p className="text-lime-400 text-md font-semibold uppercase tracking-wide mb-3">
@@ -76,6 +76,3 @@ const Blog = () => {
 }
 
 export default Blog
-
-
-

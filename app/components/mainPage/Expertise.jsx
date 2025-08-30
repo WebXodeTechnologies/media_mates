@@ -119,7 +119,7 @@ const Expertise = () => {
 
       {/* Right Side */}
       <div ref={rightColRef} className="md:w-1/2 space-y-6 cursor-pointer">
-         <p className="text-lime-400 font-semibold mb-2 flex items-center justify-center gap-2">
+        <p className="text-lime-400 font-semibold mb-2 flex items-center justify-center gap-2">
           <span className="text-lg">✱</span> OUR EXPERTISE
         </p>
         <h2 className="text-4xl font-bold leading-snug text-black dark:text-white">

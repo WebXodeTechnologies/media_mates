@@ -151,7 +151,7 @@ export default function Navbar() {
           {/* Phone */}
           <div className="mb-8">
             <div className="flex justify-center mb-3">
-                <FaPhoneAlt className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+              <FaPhoneAlt className="rounded-full  text-lime-400 hover:text-white w-7 h-8" />
             </div>
             <h3 className="font-bold text-lg">Phone</h3>
             <p className="text-gray-300">+91-9150253488</p>
@@ -162,7 +162,7 @@ export default function Navbar() {
           {/* Email */}
           <div className="mb-8">
             <div className="flex justify-center mb-3">
-                <MdOutlineMailOutline className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+              <MdOutlineMailOutline className="rounded-full  text-lime-400 hover:text-white w-7 h-8" />
             </div>
             <h3 className="font-bold text-lg">Email</h3>
             <p className="text-gray-300">contact.mediamates@gmail.com</p>
@@ -172,8 +172,8 @@ export default function Navbar() {
 
           {/* Address */}
           <div className="mb-8">
-             <div className="flex justify-center mb-3">
-                <ImLocation2 className="rounded-full  text-lime-400 hover:text-white w-7 h-8"/>
+            <div className="flex justify-center mb-3">
+              <ImLocation2 className="rounded-full  text-lime-400 hover:text-white w-7 h-8" />
             </div>
             <h3 className="font-bold text-lg">Address</h3>
             <p className="text-gray-300">

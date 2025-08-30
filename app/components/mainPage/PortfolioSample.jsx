@@ -62,12 +62,12 @@ const PortFolio = () => {
     <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
       {/* Heading */}
       <div className="text-center mb-12">
-        <p className="uppercase text-md text-green-400 font-semibold mb-3 tracking-wide">
+        <p className="uppercase text-md text-lime-400 font-semibold mb-3 tracking-wide">
          <span className="">✱</span> Portfolio
         </p>
         <h2 className="text-4xl font-bold text-white tracking-wide leading-relaxed">
           Showcasing our{" "}
-          <span className="text-green-400">Creative Journey</span> and Works
+          <span className="text-lime-400">Creative Journey</span> and Works
         </h2>
       </div>
 
@@ -79,7 +79,7 @@ const PortFolio = () => {
             onClick={() => setActiveCategory(cat)}
             className={`px-6 py-2 rounded-full transition-all font-medium ${
               activeCategory === cat
-                ? "bg-green-400 text-black"
+                ? "bg-lime-400 text-black"
                 : "bg-gray-800 text-white hover:bg-green-500 hover:text-black"
             }`}
           >
@@ -104,7 +104,7 @@ const PortFolio = () => {
               />
             </div>
             <div className="p-5">
-              <p className="text-green-400 text-sm font-medium">
+              <p className="text-lime-400 text-sm font-medium">
                 {project.category}
               </p>
               <h3 className="text-xl font-semibold text-white mt-2">

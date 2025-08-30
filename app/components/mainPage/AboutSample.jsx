@@ -5,6 +5,7 @@ import { ArrowUpRight, PhoneCall } from "lucide-react";
 import { GiSplitCross } from "react-icons/gi";
 import FloatingCta from "./FloatingCta";
 import gsap from "gsap";
+import { GoArrowUpRight } from "react-icons/go";
 
 const AboutSample = () => {
   const ctaRef = useRef(null); // ref for CTA
@@ -26,8 +27,8 @@ const AboutSample = () => {
         {/* LEFT GRID (STACKED / OVERLAPPED IMAGES) */}
         <div className="relative flex justify-center lg:justify-start">
           {/* Decorative Icons */}
-          <GiSplitCross className="absolute -top-6 left-[4] text-green-500 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
-          <GiSplitCross className="absolute -top-18 left-[4] text-green-500 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
+          <GiSplitCross className="absolute -top-6 left-[4] text-lime-400 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
+          <GiSplitCross className="absolute -top-18 left-[4] text-lime-400 text-3xl md:text-4xl opacity-70 dark:text-lime-400" />
 
           {/* First Image */}
           <div className="absolute top-6 -left-1 sm:top-10 w-56 sm:w-72 md:w-80 h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg z-10">
@@ -67,11 +68,11 @@ const AboutSample = () => {
 
         {/* RIGHT GRID (TEXT + CTA) */}
         <div className="flex flex-col gap-6 text-center lg:text-left mt-5 sm:mt-3 md:mt-5">
-          <p className="text-green-500 text-md font-semibold uppercase tracking-wide">
+          <p className="text-lime-400 text-md font-semibold uppercase tracking-wide">
             * About Us
           </p>
           <h2 className="text-2xl md:text-5xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-snug">
-            Crafting <span className="text-green-500">stories through</span>{" "}
+            Crafting <span className="text-lime-400">stories through</span>{" "}
             Creative Content
           </h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-xl mx-auto lg:mx-0 text-lg sm:text-base md:text-xl">
@@ -83,13 +84,13 @@ const AboutSample = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-6 mt-4">
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-green-500">5+</p>
+              <p className="text-xl sm:text-2xl font-bold text-lime-400">5+</p>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                 Years of Experience
               </p>
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-green-500">
+              <p className="text-xl sm:text-2xl font-bold text-lime-400">
                 30+
               </p>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
@@ -97,7 +98,7 @@ const AboutSample = () => {
               </p>
             </div>
             <div>
-              <p className="text-xl sm:text-2xl font-bold text-green-500">
+              <p className="text-xl sm:text-2xl font-bold text-lime-400">
                 98%
               </p>
               <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
@@ -107,11 +108,15 @@ const AboutSample = () => {
           </div>
 
           {/* CTA BUTTON */}
-          <div className="mt-6">
-            <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white bg-green-500 hover:bg-green-600 dark:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200 text-lg sm:text-base">
-              Learn More <ArrowUpRight size={18} />
-            </button>
-          </div>
+          <div className="text-center mt-14 flex justify-start">
+          <a
+            href="/about"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+          >
+            Learn More
+            <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+          </a>
+        </div>
         </div>
       </div>
     </section>

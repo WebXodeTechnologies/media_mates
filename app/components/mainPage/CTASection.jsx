@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { MdArrowOutward } from "react-icons/md";
+import { GoArrowUpRight } from "react-icons/go";
 
 const CTASection = () => {
     return (
@@ -26,17 +27,15 @@ const CTASection = () => {
                 </h2>
 
                 {/* Circle CTA Button */}
-                <div className="max-w-2xl mx-auto py-10 flex justify-center items-center gap-4">
-                    <a
-                        href="/contact"
-                        className="inline-flex items-center justify-center px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg sm:text-xl shadow-lg hover:bg-lime-500 dark:hover:bg-lime-300 transition-all duration-300"
-                    >
-                        Get In Touch
-                        <span className="ml-3 flex items-center justify-center w-9 h-9 rounded-full border border-black dark:border-white bg-white dark:bg-black text-black  dark:text-white hover:bg-lime-400 hover:text-black dark:hover:bg-lime-400 transition-all duration-300">
-                            <MdArrowOutward className="text-xl" />
-                        </span>
-                    </a>
-                </div>
+                <div className="text-center mt-14 flex justify-center">
+          <a
+            href="/contact"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+          >
+            Let’s Work Together
+            <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+          </a>
+        </div>
             </div>
         </section>
     );

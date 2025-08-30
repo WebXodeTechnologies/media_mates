@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import LogoWhite from "@/public/logo/logo1.png"; // Light mode logo
-import LogoDark from "@/public/logo/logo2.png";  // Dark mode logo
+import LogoDark from "@/public/logo/logo2.png";  
+import { GoArrowUpRight } from "react-icons/go";// Dark mode logo
 
 import {
   FaFacebook,
@@ -36,14 +37,15 @@ export default function Footer() {
           <p className="text-base mb-6 max-w-xs">
             Turning your story into a vision with branding, promotions, and creative media solutions.
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-block w-full text-center px-5 py-3   bg-lime-600 text-white font-semibold text-lg rounded-full shadow-lg 
-            hover:bg-lime-500 dark:bg-lime-400 dark:text-black dark:hover:bg-white dark:hover:text-black
-            transition-all duration-300 hover:shadow-[0_0_20px_#a3e635]"
-          >
-            Let’s Work Together
-          </Link>
+          <div className="text-center mt-14 flex justify-start">
+                    <a
+                      href="/contact"
+                      className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+                    >
+                      Learn More
+                      <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                    </a>
+                  </div>
         </div>
 
         {/* Column 2: Quick Links */}
@@ -80,16 +82,16 @@ export default function Footer() {
             Follow Us
           </h3>
           <div className="flex flex-col gap-4 text-lg">
-            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
+            <a href="https://www.facebook.com/mediamates.studio" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaFacebook /> Facebook
             </a>
-            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
+            <a href="https://www.instagram.com/mediamates_/" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaInstagram /> Instagram
             </a>
-            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
+            <a href="/" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaYoutube /> YouTube
             </a>
-            <a href="#" className="flex items-center gap-2 hover:text-lime-500 transition">
+            <a href="/" className="flex items-center gap-2 hover:text-lime-500 transition">
               <FaLinkedin /> LinkedIn
             </a>
           </div>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { GoArrowUpRight } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,11 +67,11 @@ const Services = () => {
     <section className="relative max-w-7xl mx-auto">
       {/* Title */}
       <div className="text-center">
-        <h2 className="text-md font-semibold text-green-400 uppercase">
-          <span className="text-green-400">✱</span> Services
+        <h2 className="text-md font-semibold text-lime-400 uppercase">
+          <span className="text-lime-400">✱</span> Services
         </h2>
         <p className="text-black dark:text-white mt-2 text-xl md:text-2xl lg:text-3xl font-semibold tracking-wide">
-          Innovative <span className="text-green-400">Creative Services</span>{" "}
+          Innovative <span className="text-lime-400">Creative Services</span>{" "}
           tailored to your Business Growth
         </p>
       </div>
@@ -102,14 +103,15 @@ const Services = () => {
       </div>
 
       {/* CTA */}
-      <div className="mt-20 text-center">
-        <p className="text-lg sm:text-xl text-black dark:text-white mb-6">
-          Are you interested to work together and get a free quote?
-        </p>
-        <button className="inline-flex items-center gap-3 px-8 py-3 rounded-full text-black bg-green-400 hover:bg-green-500 transition-all duration-300 text-lg sm:text-base shadow-[0_0_15px_rgba(16,185,129,0.8)] hover:shadow-[0_0_30px_rgba(16,185,129,0.9)] hover:scale-105">
-          Get a Quote <ArrowUpRight size={20} />
-        </button>
-      </div>
+     <div className="text-center mt-14 flex justify-center">
+               <a
+                 href="/services"
+                 className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+               >
+                 Learn More
+                 <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+               </a>
+             </div>
     </section>
   );
 };

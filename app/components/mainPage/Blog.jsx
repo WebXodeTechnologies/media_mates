@@ -30,12 +30,12 @@ const Blog = () => {
       <section className="max-w-7xl mx-auto py-20 px-6 lg:px-20">
       {/* Section Heading */}
       <div className="text-center mb-12">
-        <p className="text-green-400 text-md font-semibold uppercase tracking-wide mb-3">
+        <p className="text-lime-400 text-md font-semibold uppercase tracking-wide mb-3">
           <span className="">✱</span> Latest Blog
         </p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white leading-snug">
           Insights, trend{" "}
-          <span className="text-green-400">and inspiration</span> in design
+          <span className="text-lime-400">and inspiration</span> in design
         </h2>
       </div>
 
@@ -63,7 +63,7 @@ const Blog = () => {
               </h3>
               <a
                 href={blog.link}
-                className="flex items-center gap-2 text-green-400 font-semibold hover:underline"
+                className="flex items-center gap-2 text-lime-400 font-semibold hover:underline"
               >
                 Read More <ArrowUpRight size={18} />
               </a>

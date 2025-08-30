@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { GoArrowUpRight } from "react-icons/go";
 
 const WhyChoose = () => {
   const features = [
@@ -30,37 +31,44 @@ const WhyChoose = () => {
       <div className="grid lg:grid-cols-[1.2fr_1.8fr] gap-12 items-center">
         {/* Left Content */}
         <div className="text-left container flex-1">
-          <p className="uppercase text-xl text-green-400 font-medium mb-4 tracking-wide">
+          <p className="uppercase text-xl text-lime-400 font-medium mb-4 tracking-wide">
             Why Choose Us
           </p>
           <h2 className="text-4xl font-bold text-black dark:text-white leading-snug">
-            Powering <span className="text-green-400">brands</span> with media excellence
+            Powering <span className="text-lime-400">brands</span> with media excellence
           </h2>
           <p className="text-gray-950 dark:text-white mt-6 text-lg">
-            As a creative media agency, we fuse innovation, strategy, and storytelling 
+            As a creative media agency, we fuse innovation, strategy, and storytelling
             to craft campaigns that captivate audiences and drive measurable results.
           </p>
 
           <ul className="mt-6 space-y-3 text-gray-200">
             <li className="flex items-center gap-2 text-xl text-black dark:text-white">
-              <span className="text-green-400">✔</span>
+              <span className="text-lime-400">✔</span>
               Innovative Campaigns Built for Modern Audiences
             </li>
             <li className="flex items-center gap-2 text-xl text-black dark:text-white">
-              <span className="text-green-400">✔</span>
+              <span className="text-lime-400">✔</span>
               Strategic Partnerships that Grow with Your Brand
             </li>
           </ul>
 
-          <button className="mt-8 inline-flex items-center gap-3 px-6 py-3 rounded-full bg-green-400 text-black font-medium hover:bg-green-500 transition-all shadow-lg hover:shadow-green-500/50">
-            Let’s Collaborate <ArrowUpRight size={18} />
-          </button>
+
+          <div className="text-center mt-14 flex justify-start">
+            <a
+              href="/contact"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-lime-400 text-black font-semibold rounded-full text-lg shadow-lg transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_#a3e635]" // Glow effect on hover
+            >
+              Let’s Work Together
+              <GoArrowUpRight className="text-xl transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+            </a>
+          </div>
         </div>
 
         {/* Right Side: Image + Features */}
         <div className="flex flex-col lg:flex-row items-start gap-6">
           {/* Image */}
-          <div className="relative flex-shrink-0 w-full max-w-[380px] lg:max-w-[420px] overflow-hidden rounded-[2rem] shadow-xl border border-green-400 group">
+          <div className="relative flex-shrink-0 w-full max-w-[380px] lg:max-w-[420px] overflow-hidden rounded-[2rem] shadow-xl border border-lime-400 group">
             <Image
               src="/whychoose/why-choose-image.jpg"
               alt="Creative Media Team"
@@ -73,13 +81,12 @@ const WhyChoose = () => {
           </div>
 
           {/* Feature Cards */}
-          <div className="bg-green-400 text-black rounded-2xl px-4 flex-1 shadow-md">
+          <div className="bg-lime-400 text-black rounded-2xl px-4 flex-1 shadow-md">
             {features.map((feature, idx) => (
               <div
                 key={feature.id}
-                className={`p-3 mb-3 ${
-                  idx !== features.length - 1 ? "border-b border-black/20" : ""
-                }`}
+                className={`p-3 mb-3 ${idx !== features.length - 1 ? "border-b border-black/20" : ""
+                  }`}
               >
                 <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
                 <p className="text-sm text-gray-700">{feature.description}</p>
